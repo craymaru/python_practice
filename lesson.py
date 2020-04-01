@@ -14,6 +14,7 @@ import string
 
 
 with open("design/text_template.txt") as f:
-    t = string.Template(s)
+    t = string.Template(f.read())
+
 contents = t.substitute(name="Mike", contents="How are you?")
 print(contents)
