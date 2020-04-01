@@ -20,8 +20,8 @@ DDD
 #     print(f.tell())
 #     print(f.read(1))
 
-
-with open ("text.txt", "w+") as f:
-    f.write(s)
-    f.seek(0)
+with open ("text.txt", "r+") as f:
     print(f.read())
+    f.seek(0)
+    f.write(s)
+    pass
