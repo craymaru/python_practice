@@ -21,5 +21,7 @@ DDD
 #     print(f.read(1))
 
 
-with open ("text.txt", "w") as f:
-    pass
+with open ("text.txt", "w+") as f:
+    f.write(s)
+    f.seek(0)
+    print(f.read())
