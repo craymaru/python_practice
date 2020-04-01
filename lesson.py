@@ -1,20 +1,7 @@
-import string
+import csv
 
-# s = (
-#     """
-#     Hi $name.
-#
-#     $contents
-#
-#     Have a good day
-#     """
-# )
-
-# t = string.Template(s)
-
-
-with open("design/text_template.txt") as f:
-    t = string.Template(f.read())
-
-contents = t.substitute(name="Mike", contents="How are you?")
-print(contents)
+with open("test.csv", "w") as csv_file:
+    fieldnames = ["Name", "Count"]
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerow({"Name", "A", "neoo", "heee", "head", ""})
