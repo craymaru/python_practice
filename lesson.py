@@ -7,7 +7,7 @@ DDD
 
 # with open ("text.txt", "w") as f:
 #     f.write(s)
-3
+
 # with open ("text,txt", "r") as f:
 #     # print(f.read())
 #     # while True:
