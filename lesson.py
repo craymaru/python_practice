@@ -1,27 +1,18 @@
-s = ("""
-AAA
-BBB
-CCC
-DDD
-""")
+import string
 
-# with open ("text.txt", "w") as f:
-#     f.write(s)
+s = (
+    """
+    Hi $name.
+    
+    $contents
+    
+    Have a good day
+    """
+)
 
-# with open ("text,txt", "r") as f:
-#     # print(f.read())
-#     # while True:
-#     #     chunk = 5
-#     #     line = f.readline(chunk)
-#     #     print(line)
-#     #     if not line:
-#     #         break
-#
-#     print(f.tell())
-#     print(f.read(1))
 
-with open ("text.txt", "r+") as f:
-    print(f.read())
-    f.seek(0)
-    f.write(s)
-    pass
+print(s)
+
+t = string.Template(s)
+contents = t.substitute(name="Mike", contents="How are you?")
+print(contents)
