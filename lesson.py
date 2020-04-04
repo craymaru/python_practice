@@ -1,13 +1,8 @@
-import csv
+import os
 
-with open("test.csv", "w") as csv_file:
-    fieldnames = ["Name", "Count"]
-    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-    writer.writeheader()
-    writer.writerow({"Name": "A", "Count": "1"})
-    writer.writerow({"Name": "B", "Count": "2"})
+print(os.path.exists("test.csv"))
+print(os.path.isfile("test.csv"))
+print(os.path.isdir("design"))
 
-with open("test.csv", "r") as csv_file:
-    reader = csv.DictReader(csv_file)
-    for row in reader:
-        print(row["Name"], row["Count"])
+
+os.rename("renamed.txt", "text.txt")
