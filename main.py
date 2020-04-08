@@ -3,7 +3,6 @@ from roboter import utils
 
 
 def askName():
-
     while True:
         cprint("Hello, I'm Meow. What is your name?", "cyan",
                attrs=["bold", "reverse"])
@@ -15,9 +14,11 @@ def askName():
             break
         cprint("Oops, Please input again.", "red")
 
+
 def recommendRestaurants(dic):
     print("R", dic)
 
+    # dic_sorted = sorted(dic.items(), key=lambda x:x[1])
     for name, count in dic.items():
         cprint(f"{username}, I recommend {name} restaurant." +
                f"[♥{count}]"
@@ -37,34 +38,35 @@ def recommendRestaurants(dic):
 
 
 def askRestaurant(dic):
-    cprint(f"{name}, Witch restaurants do you like?", "cyan",
+    cprint(f"{username}, Witch restaurants do you like?", "cyan",
            attrs=["bold", "reverse"])
     cprint("> ", end="")
-    restaurant = input()
+    restaurant = input().capitalize()
 
+    new_dic = {reestaurant: 1}
+    print("+", new_dic)
+    dic.update(new_dic)
 
-    cprint(f"Thank you so much, {name}!"
+    cprint(f"Thank you so much, {username}!"
            " Have a good day!", "cyan",
            attrs=["bold", "reverse"])
 
-def main():
 
+def main():
     askName()
 
     filename = "restaurants_ranking.csv"
     fieldnames = ["name", "count"]
     dic = utils.read_csv(filename)
-    # print("R", dic)
 
     recommendRestaurants(dic)
 
     askRestaurant(dic)
 
-    newdic = {}
-    print("U", newdic)
-    dic.update(newdic)
-
     print("W", dic)
     utils.write_csv(filename, fieldnames, dic)
 
-main()
+
+if __name__ == "__main__":
+    while True:
+        main()
