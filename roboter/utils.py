@@ -15,12 +15,18 @@ def read_csv(filename):
             dic.update({row["name"]: row["count"]})
         return dic
 
-def write_csv(filename, dic):
-    filenames = ["name", "count"]
 
+def write_csv(filename, fieldnames, dic):
+    """
+
+    :param filename:
+    :param fieldnames:
+    :param dic:
+    :return:
+    """
     with open(filename, 'w') as f:
 
-        writer = csv.DictWriter(f, fieldnames=filenames, delimiter=",", quotechar='"')
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=",", quotechar='"')
         writer.writeheader()
 
         for k, v in dic.items():
