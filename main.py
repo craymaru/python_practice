@@ -1,13 +1,9 @@
-from roboter.csv_rw import read_csv
-from roboter.csv_rw import write_csv
+from roboter import utils
 
-
-
-
-if __name__ == "__main__":
+def main():
 
     filename = "restaurants_ranking.csv"
-    dic = read_csv(filename)
+    dic = utils.read_csv(filename)
     print("R", dic)
 
     newdic = {}
@@ -15,4 +11,6 @@ if __name__ == "__main__":
     dic.update(newdic)
 
     print("W", dic)
-    write_csv(filename, dic)
+    utils.write_csv(filename, dic)
+
+main()

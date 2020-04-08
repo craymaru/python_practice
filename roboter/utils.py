@@ -3,6 +3,11 @@ import csv
 
 def read_csv(filename):
 
+    """
+    :param filename:
+    :return: dic
+    """
+
     with open(filename, "r") as f:
         reader = csv.DictReader(f, delimiter=",", quotechar='"')
         dic = {}
@@ -11,11 +16,11 @@ def read_csv(filename):
         return dic
 
 def write_csv(filename, dic):
-    header_row = ["name", "count"]
+    filenames = ["name", "count"]
 
     with open(filename, 'w') as f:
 
-        writer = csv.DictWriter(f, fieldnames=header_row, delimiter=",", quotechar='"')
+        writer = csv.DictWriter(f, fieldnames=filenames, delimiter=",", quotechar='"')
         writer.writeheader()
 
         for k, v in dic.items():
