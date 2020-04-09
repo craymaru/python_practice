@@ -16,9 +16,12 @@ def askName():
 
 
 def recommendRestaurants(dic):
-    print("R", dic)
+    print("READ", dic)
 
-    # dic_sorted = sorted(dic.items(), key=lambda x:x[1])
+    dic_sorted = sorted(dic.items(), key=lambda x: int(x[1]), reverse=True)
+    dic = dict(dic_sorted)
+    print("SORT", dic)
+
     for name, count in dic.items():
         cprint(f"{username}, I recommend {name} restaurant." +
                f"[♥{count}]"
@@ -43,8 +46,8 @@ def askRestaurant(dic):
     cprint("> ", end="")
     restaurant = input().capitalize()
 
-    new_dic = {reestaurant: 1}
-    print("+", new_dic)
+    new_dic = {restaurant: 1}
+    print("ADD", new_dic)
     dic.update(new_dic)
 
     cprint(f"Thank you so much, {username}!"
@@ -63,7 +66,7 @@ def main():
 
     askRestaurant(dic)
 
-    print("W", dic)
+    print("WRITE", dic)
     utils.write_csv(filename, fieldnames, dic)
 
 
