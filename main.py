@@ -46,7 +46,12 @@ def askRestaurant(dic):
     cprint("> ", end="")
     restaurant = input().capitalize()
 
-    new_dic = {restaurant: 1}
+    if restaurant in dic:
+        count = int(dic[restaurant])
+    else:
+        count = 0
+
+    new_dic = {restaurant: count + 1}
     print("ADD", new_dic)
     dic.update(new_dic)
 
