@@ -44,14 +44,14 @@ while True:
 
     if checkWindow():
         for i in range(20):
-            if detectPos("d3/normal.png"):
+            if detectPos("images/normal.png"):
                 pressEnter()
-            elif detectPos("d3/ancient.png"):
+            elif detectPos("images/ancient.png"):
                 pressEnter()
                 pass
-            elif detectPos("d3/primal.png"):
+            elif detectPos("images/primal.png"):
                 exit()
-        skipExecute("d3/execute.png")
+        skipExecute("images/execute.png")
 
         # if detectPos("./d3/primal.png"):
         #     break

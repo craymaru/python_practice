@@ -3,9 +3,9 @@ import pathlib
 import glob
 import shutil
 
-print(os.path.exists("test.csv"))
-print(os.path.isfile("test.csv"))
-print(os.path.isdir("design"))
+print(os.path.exists("../sandbox/test.csv"))
+print(os.path.isfile("../sandbox/test.csv"))
+print(os.path.isdir("../sandbox/design"))
 
 
 # os.rename("text.txt", "renamed.txt")
