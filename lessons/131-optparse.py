@@ -13,12 +13,12 @@ def main():
     parser.add_option("-r", action="store_const", const="root", dest="username")
     parser.add_option("-e", dest="env")
 
+    parser.add_option("--release", action="callback", callback=is_release, dest="release")
+
     def is_release(option, opt_str, value, parser):
         if parser.values.env == "prd":
             raise parser.error("Can't release")
         setattr(parser.values, option.dest, True)
-
-    parser.add_option("--release", action="callback", callback=is_release, dest="release")
 
     group = OptionGroup(parser, "Dangerous options")
     group.add_option("-g", action="store_true", help="Group option")
